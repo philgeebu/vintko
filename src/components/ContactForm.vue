@@ -13,6 +13,3 @@
         name: 'ContactForm',
     }
 </script>
-
-<style scoped>
-</style>

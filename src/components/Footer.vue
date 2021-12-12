@@ -11,7 +11,13 @@
 </script>
 
 <style scoped>
+    footer {
+        padding: 4em 0 .5em;
+    }
+
     p {
+        margin: 0;
+        padding: 0;
         text-align: center;
     }
 </style>

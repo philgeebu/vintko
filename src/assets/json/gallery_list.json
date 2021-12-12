@@ -1,0 +1,97 @@
+[{
+        "id": 1,
+        "year": 1971,
+        "name": "King Seiko",
+        "code": "4502-7001",
+        "alt": "vintage wrist watch",
+        "fileName": "1971_kingseiko_45027001.jpg"
+    },
+    {
+        "id": 2,
+        "year": 1972,
+        "name": "Grand Seiko",
+        "code": "56467010",
+        "alt": "vintage wrist watch",
+        "fileName": "1972_grandseiko_56467010.jpg"
+    },
+    {
+        "id": 3,
+        "year": 1972,
+        "name": "Grand Seiko",
+        "code": "6156-8010",
+        "alt": "vintage wrist watch",
+        "fileName": "1972_grandseiko_61568010.jpg"
+    },
+    {
+        "id": 4,
+        "year": 1972,
+        "name": "King Seiko",
+        "code": "5246-7000",
+        "alt": "vintage wrist watch",
+        "fileName": "1972_kingseiko_52467000.jpg"
+    },
+    {
+        "id": 5,
+        "year": 1972,
+        "name": "King Seiko",
+        "code": "5626-7170",
+        "alt": "vintage wrist watch",
+        "fileName": "1972_kingseiko_56267170.jpg"
+    },
+    {
+        "id": 6,
+        "year": 1973,
+        "name": "King Seiko",
+        "code": "5646-7030",
+        "alt": "vintage wrist watch",
+        "fileName": "1973_grandseiko_56467030.jpg"
+    },
+    {
+        "id": 7,
+        "year": 1973,
+        "name": "King Seiko",
+        "code": "5246-6060",
+        "alt": "vintage wrist watch",
+        "fileName": "1973_kingseiko_52466060.jpg"
+    },
+    {
+        "id": 8,
+        "year": 1975,
+        "name": "Emblem",
+        "code": "2406-3040",
+        "alt": "vintage wrist watch",
+        "fileName": "1975_emblem_24063040.jpg"
+    },
+    {
+        "id": 9,
+        "year": 1975,
+        "name": "Lord Matic",
+        "code": "5216-8020",
+        "alt": "vintage wrist watch",
+        "fileName": "1975_lordmatic_52168020.jpg"
+    },
+    {
+        "id": 10,
+        "year": 1976,
+        "name": "King Seiko",
+        "code": "5246-5030",
+        "alt": "vintage export wrist watch",
+        "fileName": "1976_kingseiko_52465030.jpg"
+    },
+    {
+        "id": 11,
+        "year": 1978,
+        "name": "Grand Quartz",
+        "code": "8843-8020",
+        "alt": "vintage wrist watch",
+        "fileName": "1978_grandquartz_99438020.jpg"
+    },
+    {
+        "id": 12,
+        "year": 2019,
+        "name": "Alpinist",
+        "code": "SPB089",
+        "alt": "modern seiko alpinist wrist watch",
+        "fileName": "2019_alpinist_SPB089.jpg"
+    }
+]

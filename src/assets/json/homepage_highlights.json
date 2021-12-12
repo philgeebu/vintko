@@ -1,0 +1,22 @@
+[{
+        "id": 1,
+        "title": "Pictures",
+        "subtext": "View some pictures...",
+        "linkname": "Pictures",
+        "fileName": "1971_kingseiko_45027001.jpg"
+    },
+    {
+        "id": 2,
+        "title": "Videos",
+        "subtext": "Check out some videos...",
+        "linkname": "Videos",
+        "fileName": "teal_closeup.jpg"
+    },
+    {
+        "id": 3,
+        "title": "About",
+        "subtext": "Learn more about Vintko...",
+        "linkname": "About",
+        "fileName": "collection.jpg"
+    }
+]

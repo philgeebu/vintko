@@ -19,11 +19,26 @@
 
 <style>
     @import './assets/css/variables.css';
+</style>
+
+<style>
+    html {
+        font-size: 20px;
+        font-family: 'News Cycle', serif;
+    }
 
     body {
-        font-size: 16px;
-        font-family: sans-serif;
+        /* keeps content from shifting*/
+        overflow-y: scroll;
         margin: 0;
         padding: 0;
+    }
+
+    a,
+    a:visited,
+    a:hover,
+    a:active {
+        color: inherit;
+        text-decoration: inherit;
     }
 </style>

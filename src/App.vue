@@ -25,7 +25,7 @@
     html {
         font-size: 20px;
         font-family: 'News Cycle', serif;
-        background-color: #d9d9d9;
+        background-color: #e9e9e9;
     }
 
     body {

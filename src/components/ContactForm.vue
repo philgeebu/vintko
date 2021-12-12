@@ -1,6 +1,6 @@
 <template>
     <form name="contact" method="POST" netlify>
-
+        <input type="hidden" name="contact" value="simple-form" /><input type="text" name="name" />
         <label for="name">Name:</label><br>
         <input type="text" id="name" name="name">
         <br>
@@ -17,7 +17,7 @@
         </select>
         <br>
         <label for="message">Message:</label><br>
-        <textarea type="message" id="message" name="message" rows="6"></textarea>
+        <input type="textarea" id="message" name="message" rows="6" />
         <br>
         <button @click="submitForm" type="submit">Submit</button>
     </form>

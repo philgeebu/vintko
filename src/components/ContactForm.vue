@@ -1,6 +1,5 @@
 <template>
-    <form name="contact" method="POST" netlify>
-        <input type="hidden" name="contact" value="simple-form" /><input type="text" name="name" />
+    <form name="contact" method="POST" action="/" data-netlify="true">
         <label for="name">Name:</label><br>
         <input type="text" id="name" name="name">
         <br>
@@ -19,19 +18,13 @@
         <label for="message">Message:</label><br>
         <input type="textarea" id="message" name="message" rows="6" />
         <br>
-        <button @click="submitForm" type="submit">Submit</button>
+        <input type="submit" class="button">
     </form>
 </template>
 
 <script>
     export default {
-        name: 'ContactForm',
-        methods: {
-            submitForm() {
-                alert('hello')
-            }
-
-        }
+        name: 'ContactForm'
     }
 </script>
 
@@ -56,7 +49,7 @@
         border-radius: 4px;
     }
 
-    button {
+    .button {
         background-color: green;
         padding: .6em 1em;
         font-size: .9rem;

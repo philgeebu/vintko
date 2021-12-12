@@ -1,5 +1,7 @@
 <template>
-    <ContactForm />
+    <section>
+        <ContactForm />
+    </section>
 </template>
 
 <script>
@@ -12,3 +14,13 @@
         }
     }
 </script>
+
+<style scoped>
+    section {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+    }
+</style>

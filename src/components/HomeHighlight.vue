@@ -1,9 +1,9 @@
 <template>
     <router-link :to="{ name: highlight.linkname }">
-        <div :style="{'background-image': 'url(' + require(`@/assets/img/highlights/${highlight.fileName}`) + ')'}" class="highlight">
-            <h2>{{ highlight.title }}</h2>
+        <span :style="{'background-image': 'url(' + require(`@/assets/img/highlights/${highlight.fileName}`) + ')'}" class="highlight" role="img" :aria-label="highlight.picAlt">
+            <p class="title">{{ highlight.title }}</p>
             <p> {{ highlight.subtext }}</p>
-        </div>
+        </span>
     </router-link>
 </template>
 
@@ -16,6 +16,7 @@
 
 <style scoped>
     .highlight {
+        display: block;
         background-color: #111;
         background-blend-mode: multiply;
         padding: 1em .1em;
@@ -26,5 +27,9 @@
     .highlight:hover {
         background-color: #444;
         background-position: center;
+    }
+    .title {
+        font-size: 3rem;
+        font-family: Lobster, sans-serif;
     }
 </style>

@@ -33,7 +33,7 @@
 
     export default {
         name: 'WatchList',
-        data: () => {
+        data() {
             return {
                 watchList: watchJson
             }
@@ -47,11 +47,17 @@
         -webkit-text-stroke: 0.7px black;
     }
 
+    h2 {
+        margin: 0 .4em;
+    }
+
     table {
         border-collapse: collapse;
+        background-color: white;
     }
 
     th {
+        font-family: Lobster, sans-serif;
         font-size: 1.1rem;
         text-align: left;
         border: 2px solid grey;
@@ -73,6 +79,10 @@
     }
 
     @media (min-width: 40rem) {
+
+        h2 {
+            margin: 0;
+        }
 
         td,
         th {

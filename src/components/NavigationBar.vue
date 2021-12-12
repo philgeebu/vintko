@@ -33,6 +33,7 @@
 <style scoped>
     header {
         box-shadow: 0px 0px 10px lightgrey;
+        background-color: white;
     }
 
     nav {

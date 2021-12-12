@@ -12,7 +12,7 @@
 
     export default {
         name: 'Pictures',
-        data: () => {
+        data() {
             return {
                 pictureList: galleryJson
             }

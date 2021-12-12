@@ -26,6 +26,7 @@
         box-shadow: 3px 3px 3px lightgrey;
         transition: .5s;
         cursor: pointer;
+        background-color: white;
     }
 
     figure:hover {
@@ -39,6 +40,7 @@
     }
 
     figcaption {
+        font-family: Lobster, sans-serif;
         text-align: right;
     }
 

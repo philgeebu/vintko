@@ -12,7 +12,7 @@
 
     export default {
         name: 'Videos',
-        data: () => {
+        data() {
             return {
                 videoList: videoJson,
             }

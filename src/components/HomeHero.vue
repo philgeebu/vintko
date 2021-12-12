@@ -1,7 +1,7 @@
 <template>
     <section>
         <img src="@/assets/img/vintko_logo_white.png" alt="vintko logo">
-        <p>A collection of <strong>Vintage Seiko</strong>...</p>
+        <p>A collection of <strong id="vintage">Vintage</strong> <strong>Seiko</strong>...</p>
     </section>
 </template>
 
@@ -12,6 +12,10 @@
 </script>
 
 <style scoped>
+    #vintage {
+        font-family: Lobster, sans-serif;
+    }
+
     section {
         background-color: #222;
         background-image: url(../assets/img/grassy_king.jpg);

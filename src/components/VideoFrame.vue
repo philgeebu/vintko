@@ -30,6 +30,7 @@
         margin: 0;
         max-width: 30em;
         box-shadow: 3px 3px 3px lightgrey;
+        background-color: white;
     }
 
     video {

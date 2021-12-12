@@ -41,6 +41,7 @@
 
 <style scoped>
     cite {
+        font-family: Lobster, sans-serif;
         display: block;
         text-align: right;
     }

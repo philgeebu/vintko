@@ -37,6 +37,7 @@
         .watch-list-section {
             display: flex;
             flex-direction: column;
+            margin: 0 30px;
         }
     }
 </style>

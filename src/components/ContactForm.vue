@@ -1,5 +1,6 @@
 <template>
-    <form name="contact" method="POST" action="/" data-netlify="true">
+    <form name="ContactForm" method="POST" action="/" data-netlify="true" data-netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="ContactForm" />
         <label for="name">Name:</label><br>
         <input type="text" id="name" name="name">
         <br>
@@ -16,7 +17,7 @@
         </select>
         <br>
         <label for="message">Message:</label><br>
-        <input type="textarea" id="message" name="message" rows="6" />
+        <textarea id="message" name="message" rows="6"></textarea>
         <br>
         <input type="submit" class="button">
     </form>

@@ -1,5 +1,6 @@
 <template>
-    <form name="ContactForm" method="POST" action="/" data-netlify="true" data-netlify-honeypot="bot-field">
+    <form name="ContactForm" method="POST" :submit.prevent="handleSubmit" action="/" data-netlify="true"
+        data-netlify-honeypot="bot-field">
         <input type="hidden" name="form-name" value="ContactForm" />
         <label for="name">Name:</label><br>
         <input type="text" id="name" name="name">
@@ -19,13 +20,39 @@
         <label for="message">Message:</label><br>
         <textarea id="message" name="message" rows="6"></textarea>
         <br>
-        <input type="submit" class="button">
+        <button type="submit">Submit</button>
     </form>
 </template>
 
 <script>
     export default {
-        name: 'ContactForm'
+        name: 'ContactForm',
+        data() {
+            return {
+                formData: {},
+            }
+        },
+        methods: {
+            encode(data) {
+                return Object.keys(data)
+                    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+                    .join('&')
+            },
+            handleSubmit(e) {
+                fetch('/', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded'
+                        },
+                        body: this.encode({
+                            'form-name': e.target.getAttribute('name'),
+                            ...this.formData,
+                        }),
+                    })
+                    .then(() => this.$router.push('/contact'))
+                    .catch(error => alert(error))
+            }
+        }
     }
 </script>
 

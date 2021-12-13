@@ -1,5 +1,5 @@
 <template>
-    <form name="contactForm" method="POST" @submit.prevent="{handleSubmit}" netlify action="/" data-netlify="true"
+    <form name="contactForm" method="POST" @submit.prevent="handleSubmit" netlify action="/" data-netlify="true"
         data-netlify-honeypot="bot-field">
 
         <!-- Hidden field required for Netlify -->
@@ -88,14 +88,14 @@
                     .join('&')
             },
             // Handles the form submit
-            handleSubmit(e) {
+            handleSubmit() {
                 fetch('/', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/x-www-form-urlencoded'
                         },
                         body: this.encode({
-                            'form-name': e.target.getAttribute('name'),
+                            'form-name': "contactForm",
                             ...this.formData,
                         }),
                     })

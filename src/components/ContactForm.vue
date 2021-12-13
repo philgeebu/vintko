@@ -1,7 +1,7 @@
 <template>
-    <form name="ContactForm" method="POST" @submit.prevent="handleSubmit" action="/" data-netlify="true"
+    <form name="contactForm" method="POST" @submit="{handleSubmit}" action="/" data-netlify="true"
         data-netlify-honeypot="bot-field">
-        <input type="hidden" name="form-name" value="ContactForm" />
+        <input type="hidden" name="form-name" value="contactForm" />
         <label for="name">Name:</label><br>
         <input type="text" id="name" name="name">
         <br>

@@ -95,8 +95,11 @@
                             'Content-Type': 'application/x-www-form-urlencoded'
                         },
                         body: this.encode({
-                            'form-name': "contactForm",
-                            ...this.formData,
+                            "form-name": "contact-me",
+                            name: this.name,
+                            email: this.email,
+                            topic: this.topic,
+                            message: this.message,
                         }),
                     })
                     .then(() => this.$router.push('/contactsuccess'))

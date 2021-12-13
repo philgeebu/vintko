@@ -21,19 +21,20 @@
         background-image: url(../assets/img/grassy_king.jpg);
         background-position: center;
         background-blend-mode: multiply;
+        background-size: cover;
         height: 80vh;
         color: grey;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        transition: 20s;
     }
 
     @media (min-width: 40rem) {
 
         section {
             background-position: top right;
+            transition: 20s;
         }
 
         section:hover {

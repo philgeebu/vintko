@@ -96,10 +96,11 @@
                         },
                         body: this.encode({
                             "form-name": "contactForm",
-                            name: this.name,
-                            email: this.email,
-                            topic: this.topic.value,
-                            message: this.message,
+                            ...this.formData,
+                            // name: this.name,
+                            // email: this.email,
+                            // topic: this.topic,
+                            // message: this.message,
                         }),
                     })
                     .then(() => this.$router.push('/contactsuccess'))

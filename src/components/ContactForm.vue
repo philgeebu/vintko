@@ -102,6 +102,7 @@
                             "message": this.message,
                         }),
                     })
+                    .then(() => this.$router.push('/contactsuccess'))
                     .catch(error => alert(error))
             }
         }

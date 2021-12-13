@@ -95,7 +95,7 @@
                             'Content-Type': 'application/x-www-form-urlencoded'
                         },
                         body: this.encode({
-                            "form-name": "contact-me",
+                            "form-name": "contactForm",
                             name: this.name,
                             email: this.email,
                             topic: this.topic,

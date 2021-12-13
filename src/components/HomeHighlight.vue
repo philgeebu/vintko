@@ -3,7 +3,7 @@
         <span :style="{'background-image': 'url(' + require(`@/assets/img/highlights/${highlight.fileName}`) + ')'}"
             class="highlight" role="img" :aria-label="highlight.picAlt">
             <p class="title">{{ highlight.title }}</p>
-            <p> {{ highlight.subtext }}</p>
+            <p>{{ highlight.subtext }}</p>
         </span>
     </router-link>
 </template>

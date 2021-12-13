@@ -39,6 +39,7 @@
                     .join('&')
             },
             handleSubmit(e) {
+                e.preventDefault()
                 fetch('/', {
                         method: 'POST',
                         headers: {

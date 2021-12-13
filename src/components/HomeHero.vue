@@ -19,8 +19,8 @@
     section {
         background-color: #222;
         background-image: url(../assets/img/grassy_king.jpg);
+        background-position: center;
         background-blend-mode: multiply;
-        background-size: cover;
         height: 80vh;
         color: grey;
         display: flex;
@@ -30,8 +30,15 @@
         transition: 20s;
     }
 
-    section:hover {
-        background-position: center;
+    @media (min-width: 40rem) {
+
+        section {
+            background-position: top right;
+        }
+
+        section:hover {
+            background-position: bottom left;
+        }
     }
 
     img {

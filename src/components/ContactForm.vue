@@ -1,15 +1,25 @@
 <template>
     <form name="contactForm" method="POST" @submit="{handleSubmit}" action="/" data-netlify="true"
         data-netlify-honeypot="bot-field">
+
+        <!-- Hidden field required for Netlify -->
         <input type="hidden" name="form-name" value="contactForm" />
-        <label for="name">Name:</label><br>
-        <input type="text" id="name" name="name">
+
+        <!-- Name -->
+        <label for="name">Name: </label><span class="required">(required)</span><br>
+        <input type="text" id="name" name="name" required v-model="name" :class="{ denied: nameDenied }"
+            @blur="validateName">
+        <span class="errorMessage" v-if="nameDenied">{{ nameErrorMessage }}</span>
         <br>
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email">
+
+        <!-- Email -->
+        <label for="email">Email: </label><span class="required">(required)</span><br>
+        <input type="email" id="email" name="email" required v-model="email">
         <br>
-        <label for="type">Topic:</label><br>
-        <select name="type" id="type">
+
+        <!-- Topic -->
+        <label for="topic">Topic: </label><span class="required">(required)</span><br>
+        <select name="topic" id="topic" required v-model="topic">
             <option value="">Select...</option>
             <option value="general">General</option>
             <option value="buy">Want to buy</option>
@@ -17,10 +27,17 @@
             <option value="help">Help finding something</option>
         </select>
         <br>
-        <label for="message">Message:</label><br>
-        <textarea id="message" name="message" rows="6"></textarea>
+
+        <!-- Message -->
+        <label for="message">Message: </label><span class="required">(required)</span><br>
+        <textarea id="message" name="message" rows="6" required v-model="message" :class="{ denied: messageDenied }"
+            @blur="validateMessage"></textarea>
+        <span class="errorMessage" v-if="messageDenied"><br>{{ messageErrorMessage }}</span>
         <br>
-        <button type="submit">Submit</button>
+
+        <!-- Submit -->
+        <button type="submit" :disabled=" nameDenied || messageDenied ">Submit</button>
+
     </form>
 </template>
 
@@ -30,14 +47,46 @@
         data() {
             return {
                 formData: {},
+                name: '',
+                email: '',
+                topic: '',
+                message: '',
+                nameDenied: false,
+                messageDenied: false,
+                nameErrorMessage: '',
+                messageErrorMessage: '',
             }
         },
         methods: {
+            // Validates the name field and toggles Submit disable
+            validateName(e) {
+                const name = e.target.value
+                if (name.length < 2) {
+                    this.nameErrorMessage = "Name must be longer than 2 characters."
+                    return this.nameDenied = true
+                }
+                if (!name.match(/^[a-z0-9]+$/i)) {
+                    this.nameErrorMessage = "Name must be alphanumeric only."
+                    return this.nameDenied = true
+                }
+                return this.nameDenied = false
+            },
+            // Validates the message field and toggles Submit disable
+            validateMessage(e) {
+                const message = e.target.value
+                if (message.length < 5) {
+                    this.messageErrorMessage = "Please provide a longer message."
+                    return this.messageDenied = true
+                }
+                return this.messageDenied = false
+            },
+            // encodes data being passed to Netlify
             encode(data) {
                 return Object.keys(data)
                     .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
                     .join('&')
             },
+            // Handles the form submit
             handleSubmit(e) {
                 e.preventDefault()
                 fetch('/', {
@@ -78,12 +127,30 @@
         border-radius: 4px;
     }
 
-    .button {
-        background-color: green;
+    button {
+        background-image: linear-gradient(lightgreen, green);
         padding: .6em 1em;
         font-size: .9rem;
-        border: 0;
+        border: 2px solid #333;
+        border-top: 0;
+        border-left: 0;
         border-radius: 7px;
         cursor: pointer;
+    }
+
+    .required {
+        font-size: .7rem;
+        font-style: italic;
+    }
+
+    .denied {
+        border: 2px solid darkred;
+        box-shadow: 0 0 3px darkred;
+    }
+
+    .errorMessage {
+        color: darkred;
+        font-size: .8rem;
+        font-style: italic;
     }
 </style>

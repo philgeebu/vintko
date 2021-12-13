@@ -1,4 +1,5 @@
 <template>
+    <!-- this component can be placed on any view to return to the top -->
     <button @click="backToTop" v-if="revealed">Back to top</button>
 </template>
 

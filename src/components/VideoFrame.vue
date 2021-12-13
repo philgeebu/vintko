@@ -16,13 +16,16 @@
 </script>
 
 <style scoped>
+    /* Hides the volume slider to keep video muted */
     video::-webkit-media-controls-volume-slider {
         display: none;
     }
 
+    /* Hides the volume slider to keep video muted */
     video::-webkit-media-controls-mute-button {
         display: none;
     }
+
     figure {
         border: 1px solid lightgrey;
         border-radius: 5px;

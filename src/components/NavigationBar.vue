@@ -47,6 +47,7 @@
     }
 
     li {
+        font-size: 1.3rem;
         text-align: right;
         list-style-type: none;
     }
@@ -64,7 +65,7 @@
         height: 2.5rem;
     }
 
-    @media (min-width: 40rem) {
+    @media (min-width: 42rem) {
         nav {
             max-width: 960px;
             flex-flow: row;
@@ -77,6 +78,7 @@
         }
 
         li {
+            font-size: 1.1rem;
             display: inline;
         }
     }

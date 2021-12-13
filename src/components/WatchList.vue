@@ -78,7 +78,7 @@
         font-style: italic;
     }
 
-    @media (min-width: 40rem) {
+    @media (min-width: 42rem) {
 
         h2 {
             margin: 0;

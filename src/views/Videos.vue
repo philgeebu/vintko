@@ -34,7 +34,7 @@
         gap: .5em;
     }
 
-    @media (min-width: 40rem) {
+    @media (min-width: 42rem) {
         section {
             gap: 1.5em;
         }

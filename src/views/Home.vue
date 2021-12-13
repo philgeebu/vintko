@@ -38,7 +38,7 @@
         border: 2px solid grey;
     }
 
-    @media (min-width: 40rem) {
+    @media (min-width: 42rem) {
         .highlights {
             flex-direction: row;
         }

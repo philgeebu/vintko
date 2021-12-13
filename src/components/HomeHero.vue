@@ -30,7 +30,7 @@
         justify-content: center;
     }
 
-    @media (min-width: 40rem) {
+    @media (min-width: 42rem) {
 
         section {
             background-position: top right;

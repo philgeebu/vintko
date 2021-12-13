@@ -28,7 +28,7 @@
         padding: 0 20px;
     }
 
-    @media (min-width: 40rem) {
+    @media (min-width: 42rem) {
         .about-section {
             max-width: 75ch;
             margin: 0 auto;

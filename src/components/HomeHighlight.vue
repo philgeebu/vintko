@@ -31,7 +31,7 @@
         font-family: Lobster, sans-serif;
     }
 
-    @media (min-width: 40rem) {
+    @media (min-width: 42rem) {
 
         .highlight {
             background-position: bottom left;

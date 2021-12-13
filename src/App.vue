@@ -18,10 +18,6 @@
 </script>
 
 <style>
-    @import './assets/css/variables.css';
-</style>
-
-<style>
     html {
         font-size: 20px;
         font-family: 'News Cycle', serif;

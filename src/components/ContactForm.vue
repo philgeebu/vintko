@@ -88,7 +88,7 @@
                     .join('&')
             },
             // Handles the form submit
-            async handleSubmit() {
+            async handleSubmit(e) {
                 await fetch('/', {
                         method: 'POST',
                         headers: {

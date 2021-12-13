@@ -1,5 +1,5 @@
 <template>
-    <form name="contactForm" method="POST" v-on:submit.prevent="handleSubmit" netlify action="/contactsuccess"
+    <form name="contactForm" method="POST" @submit.prevent="handleSubmit" netlify action="/contactsuccess"
         data-netlify="true" data-netlify-honeypot="bot-field">
 
         <!-- Hidden field required for Netlify -->
@@ -89,6 +89,7 @@
             },
             // Handles the form submit
             async handleSubmit() {
+                alert(this.topic)
                 await fetch('/', {
                         method: 'POST',
                         headers: {
@@ -96,10 +97,12 @@
                         },
                         body: this.encode({
                             "form-name": 'contactForm',
-                            ...this.formData,
+                            "name": this.name,
+                            "email": this.email,
+                            "topic": this.topic,
+                            "message": this.message,
                         }),
                     })
-                    .then(() => this.$router.push('/contactsuccess'))
                     .catch(error => alert(error))
             }
         }

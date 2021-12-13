@@ -88,9 +88,9 @@
                     .join('&')
             },
             // Handles the form submit
-            handleSubmit(e) {
+            async handleSubmit(e) {
                 e.preventDefault()
-                fetch('/', {
+                await fetch('/', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/x-www-form-urlencoded'
@@ -100,7 +100,9 @@
                             ...this.formData,
                         }),
                     })
-                    .then(() => this.$router.push('/contactsuccess'))
+                    .then(() => this.$router.push({
+                        name: 'ContactSuccess'
+                    }))
                     .catch(error => alert(error))
             }
         }

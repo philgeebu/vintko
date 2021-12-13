@@ -1,6 +1,6 @@
 <template>
-    <form name="contactForm" method="POST" @submit.prevent="handleSubmit" netlify action="/" data-netlify="true"
-        data-netlify-honeypot="bot-field">
+    <form name="contactForm" method="POST" v-on:submit.prevent="handleSubmit" netlify action="/contactsuccess"
+        data-netlify="true" data-netlify-honeypot="bot-field">
 
         <!-- Hidden field required for Netlify -->
         <input type="hidden" name="form-name" value="contactForm" />
@@ -88,19 +88,15 @@
                     .join('&')
             },
             // Handles the form submit
-            handleSubmit() {
+            handleSubmit(e) {
                 fetch('/', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/x-www-form-urlencoded'
                         },
                         body: this.encode({
-                            "form-name": "contactForm",
+                            "form-name": e.target.getAttribute('name'),
                             ...this.formData,
-                            // name: this.name,
-                            // email: this.email,
-                            // topic: this.topic,
-                            // message: this.message,
                         }),
                     })
                     .then(() => this.$router.push('/contactsuccess'))

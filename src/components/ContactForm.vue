@@ -98,7 +98,7 @@
                             "form-name": "contactForm",
                             name: this.name,
                             email: this.email,
-                            topic: this.topic,
+                            topic: this.topic.value,
                             message: this.message,
                         }),
                     })

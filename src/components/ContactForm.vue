@@ -1,5 +1,5 @@
 <template>
-    <form name="contactForm" method="POST" @submit.prevent="{handleSubmit}" action="/" data-netlify="true"
+    <form name="contactForm" method="POST" @submit.prevent="{handleSubmit}" netlify action="/" data-netlify="true"
         data-netlify-honeypot="bot-field">
 
         <!-- Hidden field required for Netlify -->
@@ -88,8 +88,8 @@
                     .join('&')
             },
             // Handles the form submit
-            async handleSubmit(e) {
-                await fetch('/', {
+            handleSubmit(e) {
+                fetch('/', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/x-www-form-urlencoded'

@@ -99,12 +99,7 @@
                             ...this.formData,
                         }),
                     })
-                    .then(() => {
-                        alert("Message successfully sent")
-                        this.$router.push({
-                            path: '/contactsuccess'
-                        })
-                    })
+                    .then(() => this.$router.push('/contactsuccess'))
                     .catch(error => alert(error))
             }
         }

@@ -28,6 +28,11 @@ const routes = [{
         name: 'Contact',
         component: () => import('../views/Contact.vue')
     },
+    {
+        path: '/contactsuccess',
+        name: 'ContactSuccess',
+        component: () => import('../views/ContactSuccess.vue')
+    },
 ]
 
 const router = createRouter({

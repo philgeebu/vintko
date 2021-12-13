@@ -6,10 +6,10 @@
         <input type="hidden" name="form-name" value="contactForm" />
 
         <!-- Name -->
-        <label for="name">Name: </label><span class="required">(required)</span><br>
+        <label for="name">Name: </label><span class="required" v-if="!nameDenied">(required)</span>
+        <span class="errorMessage" v-if="nameDenied">{{ nameErrorMessage }}</span><br>
         <input type="text" id="name" name="name" required v-model="name" :class="{ denied: nameDenied }"
-            @blur="validateName">
-        <span class="errorMessage" v-if="nameDenied">{{ nameErrorMessage }}</span>
+            @blur="validateName" @keyup="validateName">
         <br>
 
         <!-- Email -->
@@ -29,10 +29,10 @@
         <br>
 
         <!-- Message -->
-        <label for="message">Message: </label><span class="required">(required)</span><br>
+        <label for="message">Message: </label><span class="required" v-if="!messageDenied">(required)</span>
+        <span class="errorMessage" v-if="messageDenied">{{ messageErrorMessage }}</span><br>
         <textarea id="message" name="message" rows="6" required v-model="message" :class="{ denied: messageDenied }"
-            @blur="validateMessage"></textarea>
-        <span class="errorMessage" v-if="messageDenied"><br>{{ messageErrorMessage }}</span>
+            @blur="validateMessage" @keyup="validateMessage"></textarea>
         <br>
 
         <!-- Submit -->
@@ -62,10 +62,11 @@
             validateName(e) {
                 const name = e.target.value
                 if (name.length < 2) {
-                    this.nameErrorMessage = "Name must be longer than 2 characters."
+                    this.nameErrorMessage = "Name must be at least 2 characters."
                     return this.nameDenied = true
                 }
-                if (!name.match(/^[a-z0-9]+$/i)) {
+                // if (!name.match(/^[a-z0-9]+$/i)) {
+                if (!name.match(/^[a-zA-Z0-9 ]*$/gm)) {
                     this.nameErrorMessage = "Name must be alphanumeric only."
                     return this.nameDenied = true
                 }
@@ -99,7 +100,7 @@
                             ...this.formData,
                         }),
                     })
-                    .then(() => this.$router.push('/contact'))
+                    .then(() => this.$router.push('/contactsuccess'))
                     .catch(error => alert(error))
             }
         }
@@ -108,8 +109,13 @@
 
 <style scoped>
     form {
-        width: 100%;
+        width: 90%;
         max-width: 40ch;
+    }
+
+    textarea {
+        min-width: 100%;
+        max-width: 100%;
     }
 
     input,
@@ -123,12 +129,11 @@
         border: 2px solid #333;
         border-top: 0;
         border-left: 0;
-        /* border-right: 0; */
         border-radius: 4px;
     }
 
     button {
-        background-image: linear-gradient(lightgreen, green);
+        background-color: lightgreen;
         padding: .6em 1em;
         font-size: .9rem;
         border: 2px solid #333;
@@ -139,7 +144,7 @@
     }
 
     .required {
-        font-size: .7rem;
+        font-size: .8rem;
         font-style: italic;
     }
 
@@ -149,8 +154,8 @@
     }
 
     .errorMessage {
+        margin: 0;
         color: darkred;
         font-size: .8rem;
-        font-style: italic;
     }
 </style>

@@ -1,7 +1,7 @@
 <template>
     <header>
         <nav>
-            <router-link to="/"><img alt="Vintko logo" src="../assets/img/vintko_logo.png">
+            <router-link to="/"><img alt="Vintko navigation logo" src="../assets/img/vintko_logo.png">
             </router-link>
             <ul>
                 <li>

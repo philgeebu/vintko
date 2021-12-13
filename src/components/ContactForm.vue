@@ -89,7 +89,6 @@
             },
             // Handles the form submit
             async handleSubmit() {
-                alert(this.topic)
                 await fetch('/', {
                         method: 'POST',
                         headers: {
@@ -99,7 +98,7 @@
                             "form-name": 'contactForm',
                             "name": this.name,
                             "email": this.email,
-                            "topic": this.topic,
+                            "topic": this.topic.toString(),
                             "message": this.message,
                         }),
                     })
